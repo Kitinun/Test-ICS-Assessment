@@ -12,20 +12,21 @@ import StarIcon from '@mui/icons-material/Star';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 function BoxcardImage(props) {
-    let navigate = useNavigate(); 
+    console.log("props", props);
+    let navigate = useNavigate();
 
     const componentStyles = {
         width: '5rem',
         height: '5rem',
     };
 
-    const goToDetail = (data) => {
-        let path = `/detail`; 
+    const goToDetail = (id) => {
+        let path = `/detail/${id}`;
         navigate(path);
     }
 
     return (
-        <Card sx={{ maxWidth: 300, ml: 6, mt: 6 }} onClick={() => goToDetail(props)}>
+        <Card sx={{ maxWidth: 300, ml: 6, mt: 6 }} onClick={() => goToDetail(props.item.id)}>
             <CardActionArea sx={{ position: 'relative' }}>
                 <CardHeader
                     avatar={
@@ -35,7 +36,7 @@ function BoxcardImage(props) {
                     title={props.item?.name}
                     subheader={
                         <Stack direction='row' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <Typography sx={{ display: 'flex', alignItems: 'flex-start'}} >
+                            <Typography sx={{ display: 'flex', alignItems: 'flex-start' }} >
                                 <CalendarTodayIcon sx={{ width: 20, height: 20 }} />
                                 <Typography sx={{ ml: 1 }}>{`${props.item.operation_time[0].time_open} - ${props.item.operation_time[0].time_close}`}</Typography>
                             </Typography>
