@@ -21,7 +21,7 @@ function BoxcardImage(props) {
     };
 
     const goToDetail = (id) => {
-        let path = `/detail/${id}`;
+        let path = `/placeshop/${id}`;
         navigate(path);
     }
 

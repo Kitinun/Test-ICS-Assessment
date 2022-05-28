@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Routes, Route } from "react-router-dom";
 import NavBarMenu from '../component/NavbarMenu';
 import Home from "../page/Home"
-import Detail from "../page/Detail"
+import PlaceShop from "../page/PlaceShop"
 
 const Routers = () => {
     return (
@@ -10,7 +10,7 @@ const Routers = () => {
             <NavBarMenu />
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route exact path="/detail/:id" element={<Detail/>} />
+                <Route exact path="/placeshop/:id" element={<PlaceShop/>} />
             </Routes>
         </div>
     )
