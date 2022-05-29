@@ -178,7 +178,6 @@ function NavbarMenu() {
                                             mr: open ? 3 : 'auto',
                                             justifyContent: 'center',
                                         }}
-
                                         onClick={() => goPageHome()}
                                     >
                                         <img alt="User" src="/svg/place.svg" />
