@@ -10,6 +10,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import StarIcon from '@mui/icons-material/Star';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import { Box } from '@mui/system';
 
 function BoxcardImage(props) {
     let navigate = useNavigate();
@@ -19,28 +20,33 @@ function BoxcardImage(props) {
         height: '5rem',
     };
 
-    const goToDetail = (id, item) => {
-        navigate(`/placeshop/${id}`, { state: { data: item } });
+    const goToDetail = (item) => {
+        navigate(`/placeshop`, { state: { data: item } });
     }
 
     return (
-        <Card sx={{ maxWidth: 300, ml: 6, mt: 6 }} onClick={() => goToDetail(props.item.id, props.item)}>
+        <Card sx={{ maxWidth: 300, ml: 6, mt: 6 }} onClick={() => goToDetail(props.item)}>
             <CardActionArea sx={{ position: 'relative' }}>
                 <CardHeader
                     avatar={
                         <Avatar variant='rounded' aria-label="recipe" sx={{ width: 60, height: 60 }}
-                            src={props.item.profile_image_url}></Avatar>
+                            src={props.item.profile_image_url}>
+                        </Avatar>
                     }
                     title={props.item?.name}
                     subheader={
                         <Stack direction='row' sx={{ display: 'flex', justifyContent: 'space-between' }}>
                             <Typography sx={{ display: 'flex', alignItems: 'flex-start' }} >
                                 <CalendarTodayIcon sx={{ width: 20, height: 20 }} />
-                                <Typography sx={{ ml: 1 }}>{`${props.item.operation_time[0].time_open} - ${props.item.operation_time[0].time_close}`}</Typography>
+                                <Typography sx={{ ml: 1 }}>
+                                    <span>{`${props.item.operation_time[0].time_open} - ${props.item.operation_time[0].time_close}`}</span>
+                                </Typography>
                             </Typography>
                             <Typography sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                                {props.item.rating}
-                                <StarIcon sx={{ width: 20, height: 20 }} />
+                                <Box sx={{ mr: 1 }}>
+                                    <img src="/svg/point.svg" />
+                                </Box>
+                                <span>{props.item.rating}</span>
                             </Typography>
                         </Stack>
                     }

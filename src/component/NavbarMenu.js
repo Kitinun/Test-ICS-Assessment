@@ -105,83 +105,85 @@ function NavbarMenu() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open}>
-                <Toolbar className="backgroub-color">
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{
-                            marginRight: 5,
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <Avatar alt="User" src="/svg/ics.svg" />
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="" color="inherit">
-                            <Badge badgeContent={1} color="error">
-                                <NotificationsActiveIcon />
-                            </Badge>
+        <>
+            <Box sx={{ display: 'flex', xs: 'none', md: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="fixed" open={open}>
+                    <Toolbar className="backgroub-color">
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: 5,
+                                ...(open && { display: 'none' }),
+                            }}
+                        >
+                            <Avatar alt="User" src="/svg/ics.svg" />
                         </IconButton>
-                        <IconButton size="large" aria-label="" color="inherit">
-                            <Avatar alt="User" src="/svg/person.svg" />
-                        </IconButton>
-                        <IconButton size="large" aria-label="" color="inherit">
-                            <span className="text-size-18">Akkarapol</span>
-                        </IconButton>
-                        <IconButton size="large" aria-label="" color="inherit">
-                            <Badge>
-                                <ArrowDropDownIcon />
-                            </Badge>
-                        </IconButton>
-                    </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton size="large" color="inherit" onClick={handleMobileMenuOpen}>
-                            <Avatar alt="User" src="/svg/person.svg" />
-                        </IconButton>
-                    </Box>
-                </Toolbar>
-            </AppBar>
+                        <Box sx={{ flexGrow: 1 }} />
+                        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                            <IconButton size="large" aria-label="" color="inherit">
+                                <Badge badgeContent={1} color="error">
+                                    <NotificationsActiveIcon />
+                                </Badge>
+                            </IconButton>
+                            <IconButton size="large" aria-label="" color="inherit">
+                                <Avatar alt="User" src="/svg/person.svg" />
+                            </IconButton>
+                            <IconButton size="large" aria-label="" color="inherit">
+                                <span className="text-size-18">Akkarapol</span>
+                            </IconButton>
+                            <IconButton size="large" aria-label="" color="inherit">
+                                <Badge>
+                                    <ArrowDropDownIcon />
+                                </Badge>
+                            </IconButton>
+                        </Box>
+                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton size="large" color="inherit" onClick={handleMobileMenuOpen}>
+                                <Avatar alt="User" src="/svg/person.svg" />
+                            </IconButton>
+                        </Box>
+                    </Toolbar>
+                </AppBar>
 
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <List>
-                    {['Place'].map((text, index) => (
-                        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                }}
-                            >
-                                <ListItemIcon
+                <Drawer variant="permanent" open={open}>
+                    <DrawerHeader>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                        </IconButton>
+                    </DrawerHeader>
+                    <Divider />
+                    <List>
+                        {['Place'].map((text, index) => (
+                            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                                <ListItemButton
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
                                     }}
                                 >
-                                    <img alt="User" src="/svg/place.svg" />
-                                </ListItemIcon>
-                                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-            </Drawer>
-        </Box>
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <img alt="User" src="/svg/place.svg" />
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider />
+                </Drawer>
+            </Box >
+        </>
     );
 }
 

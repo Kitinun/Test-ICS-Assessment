@@ -10,7 +10,7 @@ const Routers = () => {
             <NavBarMenu />
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route exact path="/placeshop/:id" element={<PlaceShop/>} />
+                <Route exact path="/placeshop" element={<PlaceShop/>} />
             </Routes>
         </div>
     )
