@@ -38,7 +38,6 @@ function applySortFilter(array, comparator, query) {
 }
 
 function Home() {
-
     const [selected, setSelected] = useState([]);
     const [placeName, setPlaceName] = useState('');
     const [order, setOrder] = useState('asc');
@@ -75,10 +74,10 @@ function Home() {
                     <Grid spacing={2}>
                         <Grid item xs={12} sm={4} md={5} lg={7} xl={9}>
                             <Box className='text-title' sx={{ display: { xs: 'none', md: 'flex' }, mt: 5, ml: 5 }}>
-                                <h5>Place List</h5>
+                                <h3>Place List</h3>
                             </Box>
                             <Box className="text-title" sx={{ display: { xs: 'flex', md: 'none' }, mt: 5, ml: 5 }}>
-                                <h5>Place List</h5>
+                                <h3>Place List</h3>
                             </Box>
                         </Grid>
                     </Grid>
@@ -103,9 +102,14 @@ function Home() {
                                 return <BoxcardImage key={i} item={item} index={i} />
                             })
                             :
-                            <Typography sx={{ display: 'flex', justifyContent: 'center' }}>
-                                <h5>ไม่พบข้อมูล</h5>
-                            </Typography>
+                            <Box sx={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                            }}>
+                                <Typography>
+                                    <p>ไม่พบข้อมูล</p>
+                                </Typography>
+                            </Box>
                         }
                     </Grid>
 

@@ -12,7 +12,6 @@ import StarIcon from '@mui/icons-material/Star';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 function BoxcardImage(props) {
-    console.log("props", props);
     let navigate = useNavigate();
 
     const componentStyles = {
@@ -20,13 +19,12 @@ function BoxcardImage(props) {
         height: '5rem',
     };
 
-    const goToDetail = (id) => {
-        let path = `/placeshop/${id}`;
-        navigate(path);
+    const goToDetail = (id, item) => {
+        navigate(`/placeshop/${id}`, { state: { data: item } });
     }
 
     return (
-        <Card sx={{ maxWidth: 300, ml: 6, mt: 6 }} onClick={() => goToDetail(props.item.id)}>
+        <Card sx={{ maxWidth: 300, ml: 6, mt: 6 }} onClick={() => goToDetail(props.item.id, props.item)}>
             <CardActionArea sx={{ position: 'relative' }}>
                 <CardHeader
                     avatar={

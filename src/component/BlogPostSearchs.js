@@ -8,7 +8,7 @@ import Iconify from '../component/Iconify';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Toolbar)(({ theme }) => ({
-  height: 96,
+  height: 75,
   display: 'flex',
   justifyContent: 'space-between',
   padding: theme.spacing(0, 1, 0, 3),
@@ -60,6 +60,15 @@ export default function BlogPostSearchs({ numSelected, placeName, onFilterName }
           }
         />
       )}
+      <style jsx="true" global="true">{`
+     
+
+     .css-1026je5-MuiInputBase-root-MuiOutlinedInput-root {
+       border: 1px solid #134B8A;
+       border-radius: 50px;
+   }
+        
+         `}</style>
     </RootStyle>
   );
 }

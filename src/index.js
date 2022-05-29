@@ -5,7 +5,6 @@ import './css/style.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import Routers from './route/Routers';
-import NavBarMenu from './component/NavbarMenu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

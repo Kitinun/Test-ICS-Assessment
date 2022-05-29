@@ -6,24 +6,18 @@ import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
 
 const drawerWidth = 240;
 
@@ -130,7 +124,7 @@ function NavbarMenu() {
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton size="large" aria-label="" color="inherit">
-                            <Badge badgeContent={4} color="error">
+                            <Badge badgeContent={1} color="error">
                                 <NotificationsActiveIcon />
                             </Badge>
                         </IconButton>
