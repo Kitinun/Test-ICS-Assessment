@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -87,6 +88,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 function NavbarMenu() {
+    let navigate = useNavigate();
     const theme = useTheme();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -103,6 +105,10 @@ function NavbarMenu() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+
+    const goPageHome = () => {
+        navigate(`/`);
+    }
 
     return (
         <>
@@ -172,6 +178,8 @@ function NavbarMenu() {
                                             mr: open ? 3 : 'auto',
                                             justifyContent: 'center',
                                         }}
+
+                                        onClick={() => goPageHome()}
                                     >
                                         <img alt="User" src="/svg/place.svg" />
                                     </ListItemIcon>
