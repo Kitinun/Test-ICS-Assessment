@@ -82,7 +82,7 @@ function Home() {
                         </Grid>
                     </Grid>
 
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', ml: 3 }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', ml: 3, justifyContent: 'flex-end'}}>
                         <div sx={{ m: 1, width: '25ch' }} variant="outlined">
                             <InputSelect
                                 selectValue={countrySelectValue} dataList={countryList}
